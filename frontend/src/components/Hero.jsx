@@ -18,8 +18,8 @@ const Hero = () => {
               Hello, I'm <br/><span className="text-[#915eff]">Dinh Huy</span>
             </h1>
             <p className={`${styles.heroSubText} mt-2 text-white-80`}>
-                I'm a junior full stack DevWeb <br className="sm:block hidden" />
-                working with ReactJs and JavaScript.
+                I'm a junior full stack DevWeb.<br className="sm:block hidden" />
+                This website is built with ReactJs and Tailwind.
             </p>
           </div>
       </div>
