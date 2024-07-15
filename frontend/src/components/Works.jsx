@@ -26,9 +26,22 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
               className="black-gradient w-10 h-10 cursor-pointer rounded-full
               flex justify-center items-center"
             >
-              <img src={github} alt="github" className="w-5 h-5" />
+              <img src={github} alt="github" className="w-1/2 h-1/2 object-contain" />
             </div>
           </div>
+        </div>
+
+        <div className="mt-5">
+          <h3 className="text-white text-[24px] font-bold">{name}</h3>
+          <p className="text-secondary text-[14px] mt-2">{description}</p>
+        </div>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          {tags.map((tag, index) => (
+            <div key={`tag-${index}`} className={`text-[14px] ${tag.color}`}>
+              #{tag.name}
+            </div>
+          ))}
         </div>
       </Tilt>
     </motion.div>
@@ -67,4 +80,4 @@ const Works = () => {
   )
 }
 
-export default SectionWrapper(Works, "");
+export default SectionWrapper(Works, "works");

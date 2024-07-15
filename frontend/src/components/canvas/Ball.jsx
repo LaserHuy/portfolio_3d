@@ -20,20 +20,22 @@ const Ball = (props) => {
           flatShading
         />
         <Decal
-          rotation={[2 * Math.PI, 0, 6.25]}
           position={[0, 0, 1]}
+          rotation={[2 * Math.PI, 0, 6.25]}
+          scale={1}
           flatShading
           map={decal}
         />
       </mesh>
     </Float>
-  )
-}
+  );
+};
 
 const BallCanvas = ({ icon }) => {
   return (
     <Canvas
       frameLoop='demand'
+      dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
