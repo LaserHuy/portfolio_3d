@@ -40,9 +40,9 @@ import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import wcs from "./company/wcs.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import seriesLib from "./seriesLib.png";
+import formations from "./formations.jpg";
+import blogAi from "./blogAi.png";
 
 export {
   logo,
@@ -84,7 +84,7 @@ export {
   starbucks,
   tesla,
   wcs,
-  carrent,
-  jobit,
-  tripguide,
+  seriesLib,
+  formations,
+  blogAi,
 };
