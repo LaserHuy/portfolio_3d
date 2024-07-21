@@ -45,6 +45,23 @@ const ExperienceCard = ({ experience }) => (
           </li>
         ))}
       </ul>
+
+      <ul className="mt-5 flex flex-wrap list-none ml-5 gap-2">
+        {experience.skills.map((skill, index) => (
+          <li
+            key={`experience-skill-${index}`}
+            className="glassmorphism p-1 rounded-full"
+          >
+            {
+              <img 
+                src={skill}
+                alt={skill}
+                className="w-[30px] h-[30px] object-contain"
+              />
+            }
+          </li>
+        ))}
+      </ul>
     </div>
   </VerticalTimelineElement>
 )
@@ -53,8 +70,8 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>What I have done so far</p>
-        <h2 className={styles.sectionHeadText}>Work Experiences</h2>
+        <p className={styles.sectionSubText}>What I have learned so far</p>
+        <h2 className={styles.sectionHeadText}>Education</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">

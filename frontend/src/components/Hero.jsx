@@ -7,7 +7,7 @@ import { styles } from "../style";
 const Hero = () => {
   return (
     <section className="relative flex flex-col md:flex-row justify-around w-full h-screen mx-auto">
-      <div className={`${styles.paddingX} relative inset-0 top-[120px] max-w-8xl
+      <div className={`${styles.paddingX} relative inset-0 md:top-[120px] max-w-8xl
       ml-4 flex flex-row items-start gap-5`} >
           <div className="flex flex-col justify-center items-center mt-5">
             <div className="w-5 h-5 rounded-full bg-[#915eff]" />
@@ -23,7 +23,7 @@ const Hero = () => {
             </p>
           </div>
       </div>
-      <div className="relative top-[50px] w-[500px]">
+      <div className="relative top-[50px] w-[500px] hidden md:flex">
           <PicProfileCanvas className="absolute" />
           <img src={picprofile} alt="logo" 
           className="w-[600px] h-[350px] object-contain
