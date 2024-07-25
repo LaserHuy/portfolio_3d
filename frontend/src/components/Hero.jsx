@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 import { PicProfileCanvas } from "./canvas";
+import { LogoHuy } from "./logoHuy";
 import { picprofile } from "../assets";
 import { styles } from "../style";
 
@@ -14,9 +15,10 @@ const Hero = () => {
             <div className="w-1 sm:h-80 h-40 violet-gradient"/>
           </div>
           <div>
-            <h1 className={`${styles.heroHeadText} text-white`}>
-              Hello, I'm <br/><span className="text-[#915eff]">Dinh Huy</span>
+            <h1 className={`${styles.sectionHeadText} text-white`}>
+              Hello, I'm <br/>
             </h1>
+            <LogoHuy className="w-[420px] h-[100px]"/>
             <p className={`${styles.heroSubText} mt-2 text-white-80`}>
                 I'm a junior full stack DevWeb.<br className="sm:block hidden" />
                 This website is built with ReactJs and Tailwind.
@@ -36,7 +38,7 @@ const Hero = () => {
         <a href="#about">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary
           flex justify-center items-start p-2">
-            <motion.dev
+            <motion.div
               animate={{
                 y: [0, 24, 0]
               }}

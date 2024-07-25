@@ -1,13 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import { styles } from "../style";
 import { navLinks } from "../constants";
 import { logo, ava, menu, close } from "../assets";
+import { SectionObserver } from "../hoc";
 
 const Navbar = () => {
+  const sections = navLinks.map((link) => link.id);
+  const activeSection = SectionObserver(sections);
+
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    setActive(activeSection);
+  }, [activeSection]);
 
   return (
     <nav
@@ -34,11 +42,10 @@ const Navbar = () => {
             <li
               key={link.id}
               className={`${
-                active === link.title
-                  ? "text-white"
+                link.id === activeSection
+                  ? "text-white border-b-2 border-[#804dee]"
                   : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(link.title)}
             >
               <a href={`#${link.id}`}>{link.title}</a>
             </li>))
@@ -61,13 +68,12 @@ const Navbar = () => {
                 <li
                   key={link.id}
                   className={`${
-                  active === link.title
+                  active === link.id
                   ? "text-white"
                   : "text-secondary"
                   } font-poppins font-medium cursor-pointer text-[16px]`}
                   onClick={() => {
                     setToggle(!toggle);
-                    setActive(link.title);
                   }}
                 >
                   <a href={`#${link.id}`}>{link.title}</a>

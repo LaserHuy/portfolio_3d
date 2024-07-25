@@ -46,7 +46,7 @@ export const navLinks = [
   },
   {
     id: "work",
-    title: "Work",
+    title: "Works",
   },
   {
     id: "contact",
@@ -60,7 +60,7 @@ const services = [
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Frontend Developer",
     icon: mobile,
   },
   {
@@ -68,7 +68,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "AI Developer",
     icon: creator,
   },
 ];
@@ -223,7 +223,7 @@ const projects = [
   {
     name: "Series Library",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "This is my team project. Web-based platform that allows users to search for and view information about TV shows and movies. Develope for admin page also.",
     tags: [
       {
         name: "anuglar",
@@ -239,12 +239,12 @@ const projects = [
       },
     ],
     image: seriesLib,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/WildCodeSchool/0523-RemFr-JavaAngular-P2-frontend-myserieslib",
   },
   {
     name: "Courses Manager",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "This is my team project. Web-based platform that allows users to search for and view information about courses and formations. Develope for admin page also.",
     tags: [
       {
         name: "php",
@@ -260,16 +260,20 @@ const projects = [
       },
     ],
     image: formations,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/WildCodeSchool/Oxygen_Symfony",
   },
   {
-    name: "Blog Apss AI",
+    name: "Blog Apps AI",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "This my personal project. Web-based platform that allows users to search for and view information about AI and Machine Learning. Using Django for back-end.",
     tags: [
       {
         name: "react",
         color: "green-text-gradient",
+      },
+      {
+        name: "python",
+        color: "orange-text-gradient",
       },
       {
         name: "django",
@@ -281,7 +285,7 @@ const projects = [
       },
     ],
     image: blogAi,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/LaserHuy/Diot-Siaci-Django-2024",
   },
 ];
   

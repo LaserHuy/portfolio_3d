@@ -1,3 +1,4 @@
 import SectionWrapper from "./SectionWrapper";
+import SectionObserver from "./SectionObserver";
 
-export { SectionWrapper };
+export { SectionWrapper, SectionObserver };
