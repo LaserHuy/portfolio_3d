@@ -16,9 +16,9 @@ const Hero = () => {
           </div>
           <div>
             <h1 className={`${styles.sectionHeadText} text-white`}>
-              Hello, I'm <br/>
+              Hello, I'm <br/> <span className="text-[#915eff] sm:hidden">Dinh Huy</span>
             </h1>
-            <LogoHuy className="w-[420px] h-[100px]"/>
+            <LogoHuy className="w-[420px] h-[100px] hidden sm:block"/>
             <p className={`${styles.heroSubText} mt-2 text-white-80`}>
                 I'm a junior full stack DevWeb.<br className="sm:block hidden" />
                 This website is built with ReactJs and Tailwind.

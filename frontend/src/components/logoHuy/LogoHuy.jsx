@@ -1,15 +1,8 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import './LogoHuy.css';
-import { c } from "maath/dist/index-43782085.esm";
 
 const LogoHuy = (props) => {
-    const logo = document.querySelectorAll("#logo path");
-    
-    for (let i = 0; i < logo.length; i++) {
-        console.log(`Letter ${i} is ${logo[i].getTotalLength()}`);
-    }
-
     return (
         <svg
             id="logo"

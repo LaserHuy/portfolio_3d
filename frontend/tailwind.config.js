@@ -21,7 +21,29 @@ module.exports = {
       backgroundImage: {
         "hero-pattern": "url('/src/assets/herobg.png')",
       },
+      container: {
+        padding: '1rem', 
+        center: true,
+      },
+      keyframes: {
+        'infinite-scroll': {
+          from: { transform: 'translateX(300%)' },
+          to: { transform: 'translateX(-100%)' },
+        },  
+        gradient: {
+          to: {
+            backgroundPosition: "var(--bg-size) 0",
+          },
+        },
+      },
+      animation: {
+        'infinite-scroll': 'infinite-scroll 15s linear infinite',
+        gradient: "gradient 20s linear infinite",
+       
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animate"),
+  ],
 };
