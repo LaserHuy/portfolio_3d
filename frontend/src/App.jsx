@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { About, Contact, Experience, Banner, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import { About, Contact, Cursor, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 
 const App = () => {
   return (
@@ -10,15 +10,20 @@ const App = () => {
           <Navbar />
           <Hero />
         </div>
-        <Banner />
         <About />
-        <Experience />
-        <Tech />
+        <div className="bg-primary text-white bg-gradient-to-b from-primary to-tertiary">
+          <Experience />
+        </div>
+        <div className="bg-primary text-white py-[72px] sm:py-24 bg-gradient-to-b from-tertiary to-primary ">
+          <Tech />
+        </div>
         <Works />
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />
         </div>
+        <Cursor />
+
       </div>
     </BrowserRouter>
   )

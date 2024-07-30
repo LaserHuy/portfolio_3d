@@ -12,7 +12,7 @@ const SectionObserver = ( sections ) => {
             });
           },
           {
-            threshold: 0.5, // Adjust this threshold as needed
+            threshold: 1, // Adjust this threshold as needed
           }
         );
     

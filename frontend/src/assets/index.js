@@ -1,4 +1,4 @@
-import logo from "./logo_Huy.jpg";
+import logo from "./logo_Huy.png";
 import ava from "./avaHuy.png";
 import backend from "./backend.png";
 import creator from "./creator.png";

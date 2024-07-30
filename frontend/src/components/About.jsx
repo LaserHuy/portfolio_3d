@@ -7,6 +7,7 @@ import { styles } from "../style";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
+import Banner from "./Banner";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -24,8 +25,24 @@ const ServiceCard = ({ index, title, icon }) => {
           className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex
           justify-evenly items-center flex-col"
         >
-          <img src={icon} alt={title} 
-          className="w-16 h-16 object-contain" />
+          <div
+            className="relative bg-tertiary border-2 border-white/70 rounded-2xl flex items-center justify-center w-16 h-16 p-4 overflow-hidden shadow-[0_0_15px_5px_#dbe0e2]"
+          >
+            <img src={icon} alt={title} 
+            className="filter invert brightness-0" />
+            <motion.div
+              className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+              initial={{ x: '-100%' }}
+              animate={{ x: '100%' }}
+              transition={{
+                duration: 2,
+                ease: 'linear',
+                repeat: Infinity,
+                repeatType: 'loop',
+              }}
+              style={{ willChange: 'transform' }}
+            />
+          </div>
           <h3 className="text-white text-[20px] font-bold text-center">
             {title}
           </h3>
@@ -38,6 +55,7 @@ const ServiceCard = ({ index, title, icon }) => {
 const About = () => {
   return (
     <>
+      <Banner />
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview</h2>

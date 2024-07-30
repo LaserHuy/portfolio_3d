@@ -25,10 +25,10 @@ const Hero = () => {
             </p>
           </div>
       </div>
-      <div className="relative top-[50px] w-[500px] hidden md:flex">
+      <div className="relative top-[50px] w-[650px] hidden md:flex">
           <PicProfileCanvas className="absolute" />
           <img src={picprofile} alt="logo" 
-          className="w-[600px] h-[350px] object-contain
+          className="w-[200px] h-[250px] object-contain
           inset-x-0 inset-y-0 m-auto
           animate-[bounce_3s_infinite_ease_alternate] absolute"/>
       </div>

@@ -12,7 +12,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
-    contentStyle={{ background: "#1d1836", color: "#fff" }}
+    contentStyle={{ background: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(5px)", color: "#fff" }}
     contentArrowStyle={{ borderRight: "7px solid #232631" }}
     date={experience.date}
     iconStyle={{ background: experience.iconBg }}
@@ -46,11 +46,11 @@ const ExperienceCard = ({ experience }) => (
         ))}
       </ul>
 
-      <ul className="mt-5 flex flex-wrap list-none ml-5 gap-2">
+      <ul className="mt-7 flex flex-wrap list-none ml-5 gap-2">
         {experience.skills.map((skill, index) => (
           <li
             key={`experience-skill-${index}`}
-            className="glassmorphism p-1 rounded-full"
+            className="glassmorphism p-1 rounded-md"
           >
             {
               <img 

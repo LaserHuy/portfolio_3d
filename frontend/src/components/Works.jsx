@@ -23,10 +23,22 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 cursor-pointer rounded-full
-              flex justify-center items-center"
+              className="glassmorphism w-10 h-10 cursor-pointer rounded-full
+              flex justify-center items-center overflow-hidden"
             >
-              <img src={github} alt="github" className="w-1/2 h-1/2 object-contain" />
+              <img src={github} alt="github" className="w-2/3 h-2/3 object-contain" />
+              <motion.div
+                className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent opacity-30"
+                initial={{ x: '-100%' }}
+                animate={{ x: '100%' }}
+                transition={{
+                  duration: 2,
+                  ease: 'linear',
+                  repeat: Infinity,
+                  repeatType: 'loop',
+                }}
+                style={{ willChange: 'transform' }}
+              />
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ import Works from './Works';
 import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import Banner from './Banner';
+import Cursor from './Cursor';
 
 export {
   Hero,
@@ -23,4 +24,5 @@ export {
   PicProfileCanvas, 
   StarsCanvas,
   Banner,
+  Cursor,
 }
