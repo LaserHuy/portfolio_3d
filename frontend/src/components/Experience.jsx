@@ -16,6 +16,7 @@ const ExperienceCard = ({ experience }) => (
     contentArrowStyle={{ borderRight: "7px solid #232631" }}
     date={experience.date}
     iconStyle={{ background: experience.iconBg }}
+    iconClassName="shadow-none border-[5px] border-solid border-[#232631]"
     icon={
       <div className="flex justify-center items-center w-full h-full">
         <img 
@@ -66,16 +67,19 @@ const ExperienceCard = ({ experience }) => (
   </VerticalTimelineElement>
 )
 
-const Experience = () => {
+const Experience = ({ isHover, setIsHover }) => {
   return (
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>What I have learned so far</p>
-        <h2 className={styles.sectionHeadText}>Education</h2>
+        <h2
+          onMouseOver={() => setIsHover(true)}
+          onMouseOut={() => setIsHover(false)}
+          className={`${styles.sectionHeadText} inline-block`}>Education</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
+        <VerticalTimeline lineColor="rgba(255, 255, 255, 0.1)" >
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience}/>
           ))}    

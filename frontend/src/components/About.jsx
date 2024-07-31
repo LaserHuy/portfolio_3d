@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
@@ -52,13 +52,17 @@ const ServiceCard = ({ index, title, icon }) => {
   )
 }
 
-const About = () => {
+const About = ({ isHover, setIsHover }) => {
+ 
   return (
     <>
       <Banner />
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview</h2>
+        <h2 
+          onMouseOver={() =>  setIsHover(true)}
+          onMouseOut={() => setIsHover(false)} 
+          className={`${styles.sectionHeadText} inline-block`}>Overview</h2>
       </motion.div>
 
       <motion.p 
@@ -80,4 +84,4 @@ const About = () => {
   )
 }
 
-export default SectionWrapper(About, "about")
+export default SectionWrapper(About, "about");

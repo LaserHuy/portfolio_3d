@@ -60,12 +60,15 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
   )
 }
 
-const Works = () => {
+const Works = ({ isHover, setIsHover }) => {
   return (
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>My work</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
+        <h2
+          onMouseOver={() => setIsHover(true)}
+          onMouseOut={() => setIsHover(false)}
+          className={`${styles.sectionHeadText} inline-block`}>Projects.</h2>
       </motion.div>
 
       <div className="w-full flex">

@@ -5,7 +5,7 @@ import { LogoHuy } from "./logoHuy";
 import { picprofile } from "../assets";
 import { styles } from "../style";
 
-const Hero = () => {
+const Hero = ({ isHover, setIsHover }) => {
   return (
     <section className="relative flex flex-col md:flex-row justify-around w-full h-screen mx-auto">
       <div className={`${styles.paddingX} relative inset-0 md:top-[120px] max-w-8xl
@@ -15,7 +15,10 @@ const Hero = () => {
             <div className="w-1 sm:h-80 h-40 violet-gradient"/>
           </div>
           <div>
-            <h1 className={`${styles.sectionHeadText} text-white`}>
+            <h1
+              onMouseOver={() => setIsHover(true)}
+              onMouseOut={() => setIsHover(false)} 
+              className={`${styles.sectionHeadText} text-white`}>
               Hello, I'm <br/> <span className="text-[#915eff] sm:hidden">Dinh Huy</span>
             </h1>
             <LogoHuy className="w-[420px] h-[100px] hidden sm:block"/>

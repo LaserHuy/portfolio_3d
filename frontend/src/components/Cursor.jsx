@@ -1,43 +1,82 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const Cursor = () => {
-    const size = 20;
-    const circle = useRef();
+const colors = [
+    "rgba(221, 116, 245, 0.459)",
+    "glassmorphism",
+];
+
+const Cursor = ({ isActive }) => {
+    const size = isActive ? 100 : 10;
+    const circles = useRef([]);
     const mouse = useRef({ x: 0, y: 0 });
+
+    const delayedMouse = useRef({ x: 0, y: 0 });
 
     const manageMouseMove = (e) => {
         const { clientX, clientY } = e;
         mouse.current = { x: clientX, y: clientY };
 
-        moveCircle(mouse.current.x, mouse.current.y);
     };
 
+    const lerp = (x, y, n) => x * (1 - n) + y * n;
+    const rafId = useRef(null);
+
     const moveCircle = (x, y) => {
-        gsap.set(circle.current, { x, y });
+        circles.current.forEach((circle) => {
+            gsap.to(circle, {
+                x,
+                y,
+                duration: 0.3,
+                ease: "power3",
+            });
+        });
+    };
+
+    const animate = () => {
+        const { x, y } = delayedMouse.current;
+        delayedMouse.current = {
+            x: lerp(x, mouse.current.x, 0.03),
+            y: lerp(y, mouse.current.y, 0.03),
+        };
+
+        moveCircle(delayedMouse.current.x, delayedMouse.current.y);
+        rafId.current = window.requestAnimationFrame(animate);
     };
 
     useEffect(() => {
+        animate();
         window.addEventListener("mousemove", manageMouseMove);
-        return () => window.removeEventListener("mousemove", manageMouseMove);
-    }, []);
+        return () => {
+            window.removeEventListener("mousemove", manageMouseMove);
+            window.cancelAnimationFrame(rafId.current);
+        }
+    }, [isActive]);
 
     return (
-        <div 
-            ref={circle}
-            className="cursor fixed top-0 left-0 bg-[#bf61ff]" 
-            style={{
-                width: size,
-                height: size,
-                borderRadius: "50%",
-                zIndex: 5,
-                pointerEvents: "none",
-                mixBlendMode: "difference",
-                transform: "translate(-50%, -50%)",
-                transition: "all 0.1s ease",
-                transitionProperty: "width, height, border",
-            }}
-        />
+        <>
+            {colors.map((color, index) => (
+                <div
+                    key={index}
+                    ref={(el) => (circles.current[index] = el)}
+                    className="cursor fixed top-0 left-0 blur-xl pointer-events-none"
+                    style={{
+                        width: size,
+                        height: size,
+                        borderRadius: "50%",
+                        backgroundColor: color,
+                        backdropFilter: `blur(${isActive ? 0 : 0.5}rem)`,
+                        zIndex: 3,
+                        pointerEvents: "none",
+                        mixBlendMode: "difference",
+                        filter: "drop-shadow(0 0 0.5rem #bf61ff)",
+                        transform: "translate(-50%, -50%)",
+                        transition: "all 0.3s ease-out",
+                        transitionProperty: "width, height, border",
+                    }}
+                />
+            ))}
+        </>
     )
 };
 
