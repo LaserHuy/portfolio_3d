@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
 import './LogoHuy.css';
 
 const LogoHuy = (props) => {

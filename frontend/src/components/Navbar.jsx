@@ -5,6 +5,7 @@ import { styles } from "../style";
 import { navLinks } from "../constants";
 import { logo, ava, menu, close } from "../assets";
 import { SectionObserver } from "../hoc";
+import { ShinyBtn } from "./shinybtn";
 
 const Navbar = () => {
   const sections = navLinks.map((link) => link.id);
@@ -50,7 +51,8 @@ const Navbar = () => {
               <a href={`#${link.id}`}>{link.title}</a>
             </li>))
           }
-          <button className="glassmorphism btn-primary text-secondary hover:text-white">Download CV</button>
+          {/* <button className="glassmorphism btn-primary text-secondary hover:text-white">Download CV</button> */}
+          <ShinyBtn />
         </ul>
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
