@@ -7,22 +7,24 @@ import { styles } from "../style";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import ToolIcons from "./toolicons/ToolIcons.jsx";
 
 import "react-vertical-timeline-component/style.min.css";
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
-    contentStyle={{ background: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(5px)", color: "#fff" }}
+    contentStyle={{ background: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(5px)", color: "#fff", boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.2)" }}
     contentArrowStyle={{ borderRight: "7px solid #232631" }}
     date={experience.date}
-    iconStyle={{ background: experience.iconBg }}
+    iconStyle={{ background: "#050816", hover: "red" }}
     iconClassName="shadow-none border-[5px] border-solid border-[#232631]"
     icon={
       <div className="flex justify-center items-center w-full h-full">
         <img 
           src={experience.icon}
           alt={experience.company_name}
-          className="w-[60%] h-[60%] object-contain"
+          className="w-[60%] h-[60%] object-contain filter invert brightness-0 
+          transition duration-200 ease-in-out hover:filter-none"
         />
       </div>
     }
@@ -46,23 +48,17 @@ const ExperienceCard = ({ experience }) => (
           </li>
         ))}
       </ul>
-
-      <ul className="mt-7 flex flex-wrap list-none ml-5 gap-2">
-        {experience.skills.map((skill, index) => (
-          <li
-            key={`experience-skill-${index}`}
-            className="glassmorphism p-1 rounded-md"
-          >
-            {
-              <img 
-                src={skill}
-                alt={skill}
-                className="w-[30px] h-[30px] object-contain"
-              />
-            }
-          </li>
-        ))}
-      </ul>
+      <p 
+        className="mt-5 text-secondary text-[16px] font-semibold" 
+      >
+        Tools achieved:
+      </p>
+      <ToolIcons
+        className="mt-5 flex flex-nowrap gap-4 text-[#dfd9ff] object-contain"
+        iconSize={30}
+        borderSize={5}
+        iconNames={experience.skills}
+      />
     </div>
   </VerticalTimelineElement>
 )

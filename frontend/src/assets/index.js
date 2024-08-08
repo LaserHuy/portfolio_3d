@@ -39,6 +39,7 @@ import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
 import wcs from "./company/wcs.png";
+import wcsW from "./company/wcsW.png";
 
 import seriesLib from "./seriesLib.png";
 import formations from "./formations.jpg";
@@ -84,6 +85,7 @@ export {
   starbucks,
   tesla,
   wcs,
+  wcsW,
   seriesLib,
   formations,
   blogAi,

@@ -21,7 +21,7 @@ import {
     docker,
     meta,
     mySQL,
-    wcs,
+    wcsW,
     intellij,
     php,
     symfony,
@@ -132,29 +132,24 @@ const experiences = [
   {
     title: "React full-stack DevWeb",
     company_name: "Wild Code School",
-    icon: wcs,
+    icon: wcsW,
     iconBg: "#ED6C6D",
     date: "Sept. 2022 - Feb. 2023",
     points: [
-      "Attending a 5-month intensive full-stack web development bootcamp.",
       "Developing and maintaining web applications using React.js for front-end and Express.js for back-end.",
       "Implementing a product backlog, build wireframes, use APIs, integrate engaging user interfaces with HTML5 and CSS3, and much more",
     ],
     skills: [
-      reactjs,
-      nodejs,
-      mongodb,
-      mySQL,
-      expressjs,
-      html,
-      css,
-      javascript,
+      "React",
+      "Nodejs",
+      "Mongodb",
+      "MySQL",
     ],
   },
   {
     title: "Angular full-stack DevWeb",
     company_name: "Wild Code School",
-    icon: wcs,
+    icon: wcsW,
     iconBg: "#ED6C6D",
     date: "May 2023 - August 2023",
     points: [
@@ -162,12 +157,19 @@ const experiences = [
       "Developing and maintaining web applications using Angular for front-end and IntelliJ-IDEA for back-end.",
       "Using APIs, Figma build wireframes, integrate engaging user interfaces with Tailwind Css, and much more",
     ],
-    skills: [angular, intellij, figma, tailwind, bootstrap, mySQL],
+    skills: [
+      // angular, 
+      // intellij, 
+      // figma, 
+      // tailwind, 
+      // bootstrap, 
+      // mySQL
+    ],
   },
   {
     title: "PHP full-stack DevWeb",
     company_name: "Wild Code School",
-    icon: wcs,
+    icon: wcsW,
     iconBg: "#ED6C6D",
     date: "Dec. 2023 - Feb. 2024",
     points: [
@@ -175,7 +177,14 @@ const experiences = [
       "Developing and maintaining web applications using PHP for front-end and Symfony for back-end.",
       "Using APIs, Figma build wireframes, integrate engaging user interfaces with Tailwind, Bootstrap and much more",
     ],
-    skills: [php, symfony, figma, tailwind, bootstrap, mySQL],
+    skills: [
+      // php, 
+      // symfony, 
+      // figma, 
+      // tailwind, 
+      // bootstrap, 
+      // mySQL
+    ],
   },
   {
     title: "Full-stack Developer",
@@ -188,7 +197,14 @@ const experiences = [
       "Using Python, Django, and Flask to develop and maintain web applications.",
       "Developing and maintaining web applications using React.js for front-end and Django for back-end.",
     ],
-    skills: [django, python, openai, llms, reactjs, expressjs],
+    skills: [
+      // django, 
+      // python, 
+      // openai, 
+      // llms, 
+      // reactjs, 
+      // expressjs
+    ],
   },
 ];
   

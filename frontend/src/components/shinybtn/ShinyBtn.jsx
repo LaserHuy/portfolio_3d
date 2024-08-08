@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FiDownload } from "react-icons/fi";
 
 const ShinyBtn = () => {
   return (
@@ -20,9 +21,10 @@ const ShinyBtn = () => {
 
     >
         <span className="text-neutral-100 tracking-wide font-light
-        h-full w-full block relative linear-mask
+        h-full w-full relative linear-mask flex items-center justify-center
         ">
-            ShinyBtn
+            Resume
+            <FiDownload className="inline-block ml-2" />
         </span>
         <span className="block absolute inset-0 rounded-xl p-px linear-overlay" />
     </motion.button>

@@ -2,9 +2,32 @@ import { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 import { About, Contact, Cursor, Experience, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import useBlobity from "./components/blobity/useBlobity";
 
 const App = () => {
   const [isHover, setIsHover] = useState(false);
+
+  useBlobity(
+    {
+        licenseKey: "opensource",
+        focusableElementsOffsetX: 4,
+        focusableElementsOffsetY: 4,
+        color: "#ffffff",
+        dotColor: "#ffffff",
+        invert: true,
+        focusableElements:
+            "[data-blobity], h4:not([data-no-blobity]), li:not([data-no-blobity]), [data-blobity-tooltip]",
+        font: "'Inter', sans-serif",
+        fontSize: 16,
+        fontWeight: 900,
+        opacity: 1.0,
+        fontColor: "#ffffff",
+        zIndex: 35,
+        size: 50,
+        radius: 5,
+        magnetic: false,
+    }
+  );
 
   return (
     <BrowserRouter>

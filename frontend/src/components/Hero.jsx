@@ -5,6 +5,9 @@ import { LogoHuy } from "./logoHuy";
 import { picprofile } from "../assets";
 import { styles } from "../style";
 
+import ToolIcons from "./toolicons/ToolIcons.jsx";
+import { SiReact, SiTailwindcss, SiJavascript } from 'react-icons/si';
+
 const Hero = ({ isHover, setIsHover }) => {
   return (
     <section className="relative flex flex-col md:flex-row justify-around w-full h-screen mx-auto">
@@ -24,8 +27,20 @@ const Hero = ({ isHover, setIsHover }) => {
             <LogoHuy className="w-[420px] h-[100px] hidden sm:block"/>
             <p className={`${styles.heroSubText} mt-2 text-white-80`}>
                 I'm a junior full stack DevWeb.<br className="sm:block hidden" />
-                This website is built with ReactJs and Tailwind.
+                Tools are used for this website.
             </p>
+            <div className="flex mt-4 ">
+              <ToolIcons
+                className="grid grid-cols-5 gap-10 text-[#dfd9ff]"
+                borderSize={15}
+                iconSize={50}
+                iconNames={[
+                  "React", 
+                  "Tailwind", 
+                  "Javascript" 
+                ]} 
+              />
+            </div>
           </div>
       </div>
       <div className="relative top-[50px] w-[650px] hidden md:flex">

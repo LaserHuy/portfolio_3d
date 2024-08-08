@@ -3,7 +3,7 @@ import gsap from "gsap";
 
 const colors = [
     "rgba(221, 116, 245, 0.459)",
-    "glassmorphism",
+    "#D0AAFB",
 ];
 
 const Cursor = ({ isActive }) => {
@@ -59,7 +59,7 @@ const Cursor = ({ isActive }) => {
                 <div
                     key={index}
                     ref={(el) => (circles.current[index] = el)}
-                    className="cursor fixed top-0 left-0 blur-xl pointer-events-none"
+                    className="cursor fixed top-0 left-0 blur-md pointer-events-none"
                     style={{
                         width: size,
                         height: size,
@@ -69,7 +69,7 @@ const Cursor = ({ isActive }) => {
                         zIndex: 3,
                         pointerEvents: "none",
                         mixBlendMode: "difference",
-                        filter: "drop-shadow(0 0 0.5rem #bf61ff)",
+                        filter: "drop-shadow(0 0 0.5rem #D0AAFB)",
                         transform: "translate(-50%, -50%)",
                         transition: "all 0.3s ease-out",
                         transitionProperty: "width, height, border",
